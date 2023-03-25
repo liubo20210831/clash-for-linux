@@ -6,8 +6,8 @@
 # 获取脚本工作目录绝对路径
 Server_Dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-# 加载.env变量文件
-source $Server_Dir/.env
+# # 加载.env变量文件
+# source $Server_Dir/.env   # 为了制作docker镜像直接从环境变量中引用
 
 Conf_Dir="$Server_Dir/conf"
 Temp_Dir="$Server_Dir/temp"
