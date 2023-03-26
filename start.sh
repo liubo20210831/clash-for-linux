@@ -93,7 +93,7 @@ sed -n '/^proxies:/,$p' $Temp_Dir/clash.yaml > $Temp_Dir/proxy.txt
 
 # 合并形成新的config.yaml
 # cat $Temp_Dir/templete_config.yaml > $Temp_Dir/config.yaml
-# cat $Temp_Dir/proxy.txt >> $Temp_Dir/config.yaml
+cat $Temp_Dir/proxy.txt >> $Conf_Dir/config.yaml
 # \cp $Temp_Dir/config.yaml $Conf_Dir/
 
 # Configure Clash Dashboard
