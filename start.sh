@@ -61,7 +61,7 @@ Text1="Clash订阅地址可访问！"
 Text2="Clash订阅地址不可访问！"
 for i in {1..10}
 do
-        curl -k -o /dev/null -s -m 10 --connect-timeout 10 -w %{http_code} $URL | grep '[23][0-9][0-9]' &>/dev/null
+        curl ${curl_param} -o /dev/null -s -m 10 --connect-timeout 10 -w %{http_code} $URL | grep '[23][0-9][0-9]' &>/dev/null
         ReturnStatus=$?
         if [ $ReturnStatus -eq 0 ]; then
                 break
@@ -77,7 +77,7 @@ Text3="配置文件config.yaml下载成功！"
 Text4="配置文件config.yaml下载失败，退出启动！"
 for i in {1..10}
 do
-        curl -s -o $Temp_Dir/clash.yaml $URL
+        curl ${curl_param} -s -o $Temp_Dir/clash.yaml $URL
         # wget -q -O $Temp_Dir/clash.yaml $URL
 	ReturnStatus=$?
         if [ $ReturnStatus -eq 0 ]; then
